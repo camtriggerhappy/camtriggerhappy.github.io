@@ -1,1 +1,101 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cameron Williams | Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      color: #f5f5f5;
+      background: #000000;
+      font-family: Arial, sans-serif;
+      isolation: isolate;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 8% 15%, rgba(255,255,255,.55) 0 5px, transparent 2px),
+        radial-gradient(circle at 18% 72%, rgba(255,255,255,.35) 0 5px, transparent 2px),
+        radial-gradient(circle at 31% 38%, rgba(255,255,255,.45) 0 5px, transparent 2px),
+        radial-gradient(circle at 47% 82%, rgba(255,255,255,.3) 0 5px, transparent 2px),
+        radial-gradient(circle at 63% 20%, rgba(255,255,255,.5) 0 5px, transparent 2px),
+        radial-gradient(circle at 76% 58%, rgba(255,255,255,.35) 0 5px, transparent 2px),
+        radial-gradient(circle at 89% 28%, rgba(255,255,255,.45) 0 5px, transparent 2px),
+        radial-gradient(circle at 94% 88%, rgba(255,255,255,.3) 0 5px, transparent 2px);
+    }
+
+    .intro {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .intro p {
+      margin-bottom: 1rem;
+      color: #00f00080;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+    }
+
+    h1 span {
+      color: #00f00080;
+    }
+
+    .intro .summary {
+      margin: 0 auto 2rem;
+      max-width: 600px;
+      color: #cbd5e1;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.9rem 1.5rem;
+      color: #111827;
+      background: #fa6060;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: #fd9393;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <main class="intro">
+    <p>Welcome to my portfolio</p>
+    <h1>Hi, I'm <span>Cameron Williams</span>.</h1>
+    <p class="summary">
+      I'm a Developer who is interested in control systems, robotics, and real-time software. Particularly for Space applications.
+    </p>
+    <a class="button" href="#projects">View My Work</a>
+  </main>
+</body>
+</html>
