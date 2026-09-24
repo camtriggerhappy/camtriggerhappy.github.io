@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZRAEL | Cameron Williams</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            color: #f4f7f9;
+            background: #101418;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #65d6a4;
+        }
+
+        img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <style>
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+    <a href="../index.html">← Back to portfolio</a>
+
+    <h1>AZRAEL</h1>
+    <img src="../images/AZRAEL_SIDE.JPG" alt="AZRAEL robot">
+
+    <h2>Overview</h2>
+    <p>
+        AZRAEL was Astrobotics' entry to the 2026 Lunabotics challenge.
+        We placed 10th overall out of 47 teams and 8th in autonomy.
+        AZRAEL is special to me because it is the first time our team got
+        significant points in Autonomy. This made me proud since it built on many
+        developments I made as software lead
+    </p>
+
+    <h2>My Contributions</h2>
+    <p>For AZRAEL I served as the Astrobotics team lead and was responsible for systems engineering and integration.
+        I was additionally on the software team and responsible for much of the controls code.
+    </p>
+
+    <p>
+        Specifically, I was responsible for:
+    <ul>
+        <li>Configuring the networking to allow for low latency control and managing bandwidth utilization.</li>
+        <li>Transporting Compressed images from the Robot to allow for operator feedback.</li>
+        <li>Compiling a custom Jetson Kernel to re-add CAN support after NVIDIA removed the SLCAN kernel module.</li>
+        <li>Writing the low-level multithreaded drivetrain controller that calculated odometry and supplied commands to
+            the differential drivetrain at 100Hz.</li>
+        <li>Welding the Structure of the chassis and the dump System(we learned not to weld directly on waterjet cuts)</li>
+
+
+    </ul>
+        <header>Leadership</header>
+
+        <ul>
+            <li>Focusing the sub-leads on reducing the number of actuators and highly unknown development items</li>
+            <li>Alongside another member of the team we prepared a 25 page systems engineering document where we outlined how the NASA systems engineering methedology guided the planning, construction, validation, verification, and operation of our system.</li>
+        </ul>
+
+
+    </p>
+
+
+    <h2>Technologies</h2>
+    <p>Add software, hardware, sensors, and tools used on this project.</p>
+
+
+    <h2>Images and Things that Popped Up</h2>
+
+    <img src="../images/AZRAEL_FRONT.jpg", alt="Front of AZRAEL">
+    <p>The above image shows the Front of AZRAEL, Notice the welds on the hard-stop.
+        This is one of the areas that made us learn welding directly over a waterjetted cut and frequently
+        introduce contamination resulting from the abrasive. Also Pictured is our Zed-m from sterolabs
+        which works quite well as a depth-camera for our system.
+    </p>
+
+    <img src="../images/AZRAEL_SIDEDOWN.png", alt="Side of Azrael">
+    <p>The above image shows yet more welds affected by contamination.
+        It also doesn't help that I am not the best aluminum welder out there. 
+    Additionally note the large antenna on the robot, this allowed for us to maintain good comms at all times in the arena.
+    The communication system was repurposed from ANUBIS following its good performance during testing.</p>
+
+    <img src="../images/AZRAEL_ALIGNMENT_INDICATOR.png", alt="Rear of Azrael">
+    <p>
+        During competition runs the lunar regolith affected the positioning of the rack and pinon system much more than during testing. 
+        During testing in our sand pit there was minimial slippage, regolith is however much stickier than sand and caused more slippage. 
+        This caused our motor's integrated encoder to report incorrect position values for the door. 
+        I came up with the solution of adding an "allignment indicator"(yellow tape) to let us use our camera's to ensure that the door was actually where we thought it was.
+        This solution allowed us to continue on when this would otherwise be an issue that could not be solved during competition. 
+
+    </p>
+
+
+
+</body>
+
+</html>

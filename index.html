@@ -1,101 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cameron Williams | Portfolio</title>
+  <title>Cameron Williams</title>
   <style>
+    :root {
+      --background: #101418;
+      --surface: #1b2229;
+      --text: #f4f7f9;
+      --muted: #aab5bf;
+      --accent: #65d6a4;
+    }
+
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 2rem;
-      color: #f5f5f5;
-      background: #000000;
+      margin: 0;
+      color: var(--text);
+      background: var(--background);
       font-family: Arial, sans-serif;
-      isolation: isolate;
-    }
-
-    .stars {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 8% 15%, rgba(255,255,255,.55) 0 5px, transparent 2px),
-        radial-gradient(circle at 18% 72%, rgba(255,255,255,.35) 0 5px, transparent 2px),
-        radial-gradient(circle at 31% 38%, rgba(255,255,255,.45) 0 5px, transparent 2px),
-        radial-gradient(circle at 47% 82%, rgba(255,255,255,.3) 0 5px, transparent 2px),
-        radial-gradient(circle at 63% 20%, rgba(255,255,255,.5) 0 5px, transparent 2px),
-        radial-gradient(circle at 76% 58%, rgba(255,255,255,.35) 0 5px, transparent 2px),
-        radial-gradient(circle at 89% 28%, rgba(255,255,255,.45) 0 5px, transparent 2px),
-        radial-gradient(circle at 94% 88%, rgba(255,255,255,.3) 0 5px, transparent 2px);
-    }
-
-    .intro {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      text-align: center;
-    }
-
-    .intro p {
-      margin-bottom: 1rem;
-      color: #00f00080;
-      font-weight: bold;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin-bottom: 1rem;
-      font-size: clamp(2.5rem, 8vw, 5rem);
-    }
-
-    h1 span {
-      color: #00f00080;
-    }
-
-    .intro .summary {
-      margin: 0 auto 2rem;
-      max-width: 600px;
-      color: #cbd5e1;
-      font-size: 1.2rem;
       line-height: 1.6;
     }
 
-    .button {
-      display: inline-block;
-      padding: 0.9rem 1.5rem;
-      color: #111827;
-      background: #fa6060;
-      border-radius: 0.5rem;
-      font-weight: bold;
+    a {
+      color: var(--accent);
       text-decoration: none;
     }
 
-    .button:hover {
-      background: #fd9393;
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header,
+    main,
+    footer {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      padding: 4rem 0 2rem;
+    }
+
+    header h1 {
+      margin-bottom: 0.25rem;
+      font-size: 3rem;
+    }
+
+    header p,
+    .intro {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    nav {
+      margin-top: 1.5rem;
+    }
+
+    nav a {
+      margin-right: 1.5rem;
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .projects,
+    .robots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid #2c3740;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .robot-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      margin-bottom: 1rem;
+      color: var(--muted);
+      background: #273039;
+      border: 2px dashed #52616d;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .robot-image img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    footer {
+      padding: 2rem 0;
+      color: var(--muted);
+      border-top: 1px solid #2c3740;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .header-image {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
     }
   </style>
 </head>
 <body>
-  <div class="stars" aria-hidden="true"></div>
+  <header>
+    <div class="header-content">
+      <img
+        class="header-image"
+        src="images/profile.png"
+        alt="Photo of Cameron Williams"
+      >
+      <h1>Cameron Williams</h1>
+    </div>
+    <p>Senior in Computer Engineering. Particularly interested in controls and robotic navigation.</p>
 
-  <main class="intro">
-    <p>Welcome to my portfolio</p>
-    <h1>Hi, I'm <span>Cameron Williams</span>.</h1>
-    <p class="summary">
-      I'm a Developer who is interested in control systems, robotics, and real-time software. Particularly for Space applications.
-    </p>
-    <a class="button" href="#projects">View My Work</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="intro">
+        I am a Senior in Computer Engineering at Virgina Tech. I am the president of Astrobotics at Virginia Tech. My goal is to work on teams pushing what is possible in the field of robotics particularly in space.
+      </p>
+    </section>
+
+    <!-- <section id="Personal Projects">
+      <h2>Featured Projects</h2>
+
+      <div class="projects">
+        <article class="card">
+          <h3><a href="projects/project-one.html">Project One</a></h3>
+          <p>A short description of your first project.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="projects/project-two.html">Project Two</a></h3>
+          <p>A short description of your second project.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="projects/project-three.html">Project Three</a></h3>
+          <p>A short description of your third project.</p>
+        </article>
+      </div>
+    </section> -->
+
+    <section id="projects">
+      <h2>Team Projects I've contributed to</h2>
+
+      <div class="projects">
+        <article class="card">
+          <div class="robot-image">
+            <img src="images/AZRAEL_SIDE.JPG" alt="AZRAEL robot">
+          </div>
+          <h3><a href="projects/azrael.html">AZRAEL</a></h3>
+          <p>Astrobotics' 2026 Lunabotics challenge robot.</p>
+        </article>
+
+        <article class="card">
+          <div class="robot-image">Add robot image</div>
+          <h3><a href="projects/anubis.html">Under Construction</a></h3>
+          <p>Brief description of this robot.</p>
+        </article>
+
+        <article class="card">
+          <div class="robot-image">Add robot image</div>
+          <h3><a href="projects/robot-three.html">Under Construction</a></h3>
+          <p>Brief description of this robot.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email me at
+        <a href="mailto:cametonw23@vt.edu">cameronw23@vt.edu</a>
+        or find me on LinkedIn
+        <a href="https://www.linkedin.com/in/cameron-s-williams/">GitHub</a>.
+      </p>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2026 Cameron Williams</p>
+  </footer>
 </body>
 </html>
