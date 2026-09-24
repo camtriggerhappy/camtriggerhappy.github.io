@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,26 +28,54 @@
     }
   </style>
 </head>
+
 <body>
-  <a href="../index.html">← Back to portfolio</a>
-
-  <h1>ANUBIS</h1>
-  <img src="../images/ANUBIS.JPG" alt="ANUBIS(Autononmous Navigational Unit for Biological and Imaging Science) robot">
-
-  <h2>Overview</h2>
-  <p>
-   ANUBIS was a prototype rover designed for the University Rover Challenge in 2025-2026.
-   It was our first attempt in trying to enter that competition and many lessons were learned.
-   
-   <br>
-        <a href="https://youtu.be/H5azVbBsWKg?si=F7ACXyj-RGODQCA3">System Acceptance Review Video</a>
-  </br>
+  <h2>My Contributions</h2>
+  <p>For AZRAEL I served as the Astrobotics team lead and was responsible for systems engineering and integration.
+    I was additionally on the software team and responsible for much of the controls code.
   </p>
 
-  <h2>My Contributions</h2>
-  <p>Add details about your role, responsibilities, and technical contributions.</p>
+  <p>
+    Specifically, I was responsible for:
+  <ul>
+    <li>Configuring the networking to allow for low latency control and managing bandwidth utilization</li>
+    <li>Writing the low-level multithreaded drivetrain controller that calculated odometry and supplied commands to
+      the differential drivetrain at 100Hz</li>
+    <li>Writing code that ran a custom trained YOLO model to identify key competition objects (Shown in SAR)</li>
+    <li>Training YOLO model on dataset that was partially synthetically generated. (Shown in SAR)</li>
+    <li>Wrote code to find the position of Fiducial Markers relative to the robot (Shown in SAR)</li>
+    <li>Wrote Sampler controller with MicroRos in order to control the sampler drilling platform, pumps, and servo cache (Shown in SAR)</li>
+    <li>Wrote GPS on an RP2040 driver to allow for sensor fusion between our GPS and IMU</li>
+    <li>Wrote code to utilize an EKF for fusing together IMU, GPS, and Drivetrain odometry data</li>
+
+
+
+  </ul>
+  <header>Leadership</header>
+
+  <ul>
+    <li>Focusing the sub-leads on reducing the number of actuators and highly unknown development items</li>
+  </ul>
+
+
+  </p>
+
 
   <h2>Technologies</h2>
-  <p>Add software, hardware, sensors, and tools used on this project.</p>
+  <ul>
+    <li>ROS2: all robotside code that is not on a microcontroller</li>
+    <li>Extended Kalman Filter: fused together IMU, GPS, and Odometry data for a better state estimate</li>
+    <li>Object Detection: Using YOLO we were able to identify a variety of objects required by the competition</li>
+    <li>CAN: Used to control all actuators on the robot except for those directly controlled by MCU(stepper, servo, pumps)</li>
+  </ul>
+
+
+
+  <h2>Images and Things that Popped Up</h2>
+
+
+
+
 </body>
+
 </html>
